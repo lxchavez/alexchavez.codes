@@ -1,5 +1,6 @@
 {
   "name": "alexchavez.codes",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "The personal website of Alex Chavez. All serverless. Built on AWS.",
   "private": true,
