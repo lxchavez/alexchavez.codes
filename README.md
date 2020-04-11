@@ -3,6 +3,8 @@ The personal website of Alex Chavez. All serverless. Built on AWS.
 
 ## Website Architecture
 
+Below architecture diagram shows how S3/CloudFront hosts this site via HTTPS:
+
 ![Website Architectures of alexchavez.codes](img/website-architecture.png)
 
 ## Development
