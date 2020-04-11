@@ -9,7 +9,15 @@ Below architecture diagram shows how S3/CloudFront hosts this site via HTTPS:
 
 ## Development
 
-TO-DO: Document development workflow once I setup Webpack.
+### Build
+
+    npm run build
+
+### Live Reloading with webpack-dev-server
+
+    npm start
+
+You can now instantly view any saved changes in [http://localhost:8080/](http://localhost:8080/)!
 
 ## Deployment
 
