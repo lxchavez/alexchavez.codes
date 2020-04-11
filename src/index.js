@@ -6,4 +6,9 @@ function helloWorld() {
     console.log('Hello, world!');
 }
 
-helloWorld();
+if (process.env.NODE_ENV !== 'production') {
+    console.log('Looks like we\'re in development mode! Expect more output...');
+}
+else {
+    helloWorld();
+}
