@@ -17,7 +17,7 @@ At the time of writing, CloudFormation doesn't support AWS Certificate Manager s
 
 ### Updating the Site
 
-Push or approve PR changes into the **master** branch. Github Actions defined in `.github/workflows/pipeline.yml` will sync contents from `dist/` to the S3 bucket then send a request to CloudFormation to invalidate its cache in order to globally propogate site changes.
+Push or approve PR changes into the **master** branch. Github Actions defined in `.github/workflows/pipeline.yml` will build the project, sync contents from `dist/` to the S3 bucket,and lastly send a request to CloudFormation to invalidate its cache in order to globally propogate site changes.
 
 ## Site Frontend Development
 
