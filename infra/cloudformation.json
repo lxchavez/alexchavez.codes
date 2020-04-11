@@ -1,0 +1,141 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "zonealexchavezcodes": {
+      "Type": "AWS::Route53::HostedZone",
+      "Properties": {
+        "Name": "alexchavez.codes."
+      }
+    },
+    "dnsalexchavezcodes": {
+      "Type": "AWS::Route53::RecordSetGroup",
+      "Properties": {
+        "HostedZoneId": {
+          "Ref": "zonealexchavezcodes"
+        },
+        "RecordSets": [
+          {
+            "Name": "alexchavez.codes.",
+            "Type": "A",
+            "AliasTarget": {
+              "HostedZoneId": "Z2FDTNDATAQYW2",
+              "DNSName": "d30l7j3rzxbmh5.cloudfront.net"
+            }
+          }
+        ]
+      }
+    },
+    "dnswwwalexchavezcodes": {
+      "Type": "AWS::Route53::RecordSetGroup",
+      "Properties": {
+        "HostedZoneId": {
+          "Ref": "zonealexchavezcodes"
+        },
+        "RecordSets": [
+          {
+            "Name": "www.alexchavez.codes.",
+            "Type": "CNAME",
+            "TTL": "300",
+            "ResourceRecords": [
+              "alexchavez.codes"
+            ]
+          }
+        ]
+      }
+    },
+    "distd30l7j3rzxbmh5cloudfrontnet": {
+      "Type": "AWS::CloudFront::Distribution",
+      "Properties": {
+        "DistributionConfig": {
+          "Aliases": [
+            "www.alexchavez.codes",
+            "alexchavez.codes"
+          ],
+          "Enabled": true,
+          "DefaultRootObject": "index.html",
+          "PriceClass": "PriceClass_All",
+          "DefaultCacheBehavior": {
+            "TargetOriginId": "S3-alexchavez.codes",
+            "ViewerProtocolPolicy": "redirect-to-https",
+            "MinTTL": 0,
+            "AllowedMethods": [
+              "HEAD",
+              "GET"
+            ],
+            "CachedMethods": [
+              "HEAD",
+              "GET"
+            ],
+            "ForwardedValues": {
+              "Cookies": {
+                "Forward": "none"
+              }
+            }
+          },
+          "Origins": [
+            {
+              "DomainName": "alexchavez.codes.s3.amazonaws.com",
+              "Id": "S3-alexchavez.codes",
+              "S3OriginConfig": {
+              }
+            }
+          ],
+          "Restrictions": {
+            "GeoRestriction": {
+              "RestrictionType": "none",
+              "Locations": [
+
+              ]
+            }
+          },
+          "ViewerCertificate": {
+            "SslSupportMethod": "sni-only",
+            "MinimumProtocolVersion": "TLSv1.1_2016"
+          }
+        }
+      }
+    },
+    "s3alexchavezcodes": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "WebsiteConfiguration": {
+          "IndexDocument": "index.html"
+        },
+        "AccessControl": "Private",
+        "VersioningConfiguration": {
+          "Status": "Suspended"
+        }
+      }
+    },
+    "s3policyalexchavezcodes": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": {
+          "Ref": "s3alexchavezcodes"
+        },
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "PublicReadGetObject",
+              "Effect": "Allow",
+              "Principal": "*",
+              "Action": "s3:GetObject",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:aws:s3:::",
+                    "alexchavez",
+                    ".codes/*"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Description": "Deploys a serverless website using S3, CloudFront,and Route53."
+}
