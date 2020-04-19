@@ -22,18 +22,25 @@ As of April 2020, CloudFormation doesn't support AWS Certificate Manager so you'
 
 Push or approve PR changes into the **master** branch. Github Actions defined in `.github/workflows/pipeline.yml` will build the Webpack project, sync contents from the `dist/` subdirectory to the S3 bucket, then send a request to CloudFormation to invalidate the distribution's cache to propogate site changes across all AWS edge locations.
 
-## Site Frontend Development
+## Site Frontend Development With Gatsby
 
-Checkout repo and install dependencies from `package.json`:
+1. **Checkout repo and install dependencies from `package.json`.**
 
     npm install
 
-Build project:
+1.  **Start developing.**
 
-    npm run build
+    Navigate into your new site’s directory and start it up.
 
-Live Reloading with webpack-dev-server:
+    ```shell
+    cd alexchavez.codes/
+    gatsby develop
+    ```
 
-    npm start
+1.  **Open the source code and start editing!**
 
-You can now instantly view any saved changes in [http://localhost:8080/](http://localhost:8080/)!
+    Your site is now running at `http://localhost:8000`!
+
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+
+    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
