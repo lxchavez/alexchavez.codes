@@ -26,7 +26,7 @@ Push or approve PR changes into the **master** branch. Github Actions defined in
 
 This is a React static website built and scaffolded by [Gatsby](https://www.gatsbyjs.org/) primarily for it's React support and plethora of available plugins.
 
-### Getting stary
+### Getting started
 
 1. **Checkout repo and install dependencies from `package.json`.**
     
