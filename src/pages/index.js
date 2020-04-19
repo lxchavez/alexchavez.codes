@@ -31,13 +31,13 @@ export default () => (
     <Layout>
       <h1>Hello, world! I'm <span style={{ color: `#3498db` }}>Alex</span>.</h1>
       <h2> > cat about.txt</h2>
-      <Output>Building Data Products to make Alexa smarter @ Amazon</Output>
-      <h2>> select fact, desc from alex_ddl.info;</h2>
+      <Output>Building data products and making Alexa smarter @ Amazon</Output>
+      <h2>> select key, desc from alex_ddl.facts;</h2>
       <Output>
         <table>
             <tr style={{ borderBottom: `2px solid #ABB2BF` }}>
-                <th>fact</th>
-                <th>desc</th>
+                <th>key</th>
+                <th>val</th>
             </tr>
             <tr style={{ borderBottom: `2px dashed #ABB2BF` }}>
                 <td>Location</td>
