@@ -20,27 +20,30 @@ As of April 2020, CloudFormation doesn't support AWS Certificate Manager so you'
 
 ### Updating the Site
 
-Push or approve PR changes into the **master** branch. Github Actions defined in `.github/workflows/pipeline.yml` will build the Webpack project, sync contents from the `dist/` subdirectory to the S3 bucket, then send a request to CloudFormation to invalidate the distribution's cache to propogate site changes across all AWS edge locations.
+Push or approve PR changes into the **master** branch. Github Actions defined in `.github/workflows/pipeline.yml` will build the Webpack project, sync contents from the `public/` subdirectory to the S3 bucket, then send a request to CloudFormation to invalidate the distribution's cache in order to propogate site changes across all AWS edge locations.
 
 ## Site Frontend Development With Gatsby
 
-1. **Checkout repo and install dependencies from `package.json`.**
+This is a React static website built and scaffolded by [Gatsby](https://www.gatsbyjs.org/) primarily for it's React support and plethora of available plugins.
 
-    npm install
+### Getting started
+
+1. **Checkout repo and install dependencies from `package.json`.**
+    
+   ```shell
+   npm install
+   ```
 
 1.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate into the site’s directory and start it up:
 
     ```shell
-    cd alexchavez.codes/
     gatsby develop
     ```
 
 1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    The site is now running at `http://localhost:8000`!
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
