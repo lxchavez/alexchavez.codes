@@ -10,8 +10,6 @@ const ListLink = props => (
 
 const containerStyle = {
     backgroundColor: `#282c34`,
-    width: `100%`,
-    height: `100%`,
     padding: `2em`,
     margin: `1em`,
 };
