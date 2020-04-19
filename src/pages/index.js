@@ -2,8 +2,13 @@ import React from "react"
 import { Link } from "gatsby";
 import Layout from "../components/layout";
 
+const linkStyle = {
+    display: `inline-block`,
+    marginRight: `1rem`,
+};
+
 const ListLink = props => (
-    <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <li style={linkStyle}>
       <Link to={props.to}>{props.children}</Link>
     </li>
 );
@@ -52,7 +57,8 @@ export default () => (
       <h2>> ./site-links</h2>
       <ul style={{ listStyle: `none` }}>
         <ListLink to="/blog/">Blog</ListLink>
-        <a href="https://www.linkedin.com/in/lxchavez/">LinkedIn</a>
+        <a style={linkStyle} href="https://github.com/lxchavez">Github</a>
+        <a style={linkStyle} href="https://www.linkedin.com/in/lxchavez/">LinkedIn</a>
       </ul>
     </Layout>
   )
