@@ -32,7 +32,7 @@ export default () => (
       <h1>Hello, world! I'm <span style={{ color: `#3498db` }}>Alex</span>.</h1>
       <h2> > cat about.txt</h2>
       <Output>Building data products and making Alexa smarter @ Amazon</Output>
-      <h2>> select key, desc from alex_ddl.facts;</h2>
+      <h2>> select key, val from alex_ddl.facts;</h2>
       <Output>
         <table>
             <tr style={{ borderBottom: `2px solid #ABB2BF` }}>
