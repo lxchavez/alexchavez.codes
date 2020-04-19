@@ -52,8 +52,9 @@ export default () => (
         </table>
       </Output>
       <h2>> ./site-links</h2>
-      <ul style={{ listStyle: `none`, float: `left` }}>
+      <ul style={{ listStyle: `none` }}>
         <ListLink to="/blog/">Blog</ListLink>
+        <a href="https://www.linkedin.com/in/lxchavez/">LinkedIn</a>
       </ul>
     </Layout>
   )
